@@ -13,7 +13,7 @@
 | Bundler | esbuild | 0.24.0 | one build script `scripts/build.mjs`; no Vite/Webpack |
 | Extension API typings | @types/chrome | 0.0.280 | |
 | Cross-browser API shim | webextension-polyfill | 0.12.0 | + `@types/webextension-polyfill` 0.12.1; import only via `src/shared/browser.ts` |
-| Network rule conversion (build-time only) | @adguard/tsurlfilter | **PIN AT PHASE 0**: run `npm view @adguard/tsurlfilter version`, write result here, then never float | used by `scripts/build-rulesets.mjs` to convert ABP lists → DNR JSON. Fallback if unusable: minimal in-repo converter (`||domain^`, `@@`, `$third-party`, resource types) |
+| Network rule conversion (build-time only) | @adguard/tsurlfilter | 6.0.4 | used by `scripts/build-rulesets.mjs` to convert ABP lists → DNR JSON. Fallback if unusable: minimal in-repo converter (`||domain^`, `@@`, `$third-party`, resource types) |
 | Unit tests | vitest | 2.1.4 | + `jsdom` 25.0.1 for DOM tests |
 | E2E smoke | Playwright | 1.48.2 | Chromium + Firefox smoke only |
 | Lint | eslint 9.14.0 + typescript-eslint 8.13.0 | | flat config |
