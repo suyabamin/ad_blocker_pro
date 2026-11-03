@@ -13,7 +13,7 @@ Legend: `[ ]` todo · `[x]` done · `[!]` blocked
 ## Phase 0 — Scaffold & Tooling
 - [x] **0.1** Init repo, `.nvmrc` (22), `.npmrc` (`save-exact=true`), `.gitignore` (node_modules, dist, rulesets-src). (2026-11-03: initialized git repo, config files, gitignore) *Done when:* `git status` clean after first commit.
 - [x] **0.2** `package.json` with scripts from 04_TRD §11 and exact devDependencies from §1. Resolve and **write the pinned `@adguard/tsurlfilter` version into 04_TRD §1**. (2026-11-03: pinned @adguard/tsurlfilter to 6.0.4; npm ci verified) *Done when:* `npm ci` succeeds.
-- [ ] **0.3** `tsconfig.json` (strict), ESLint flat config incl. rules banning `eval`, `fetch`, `XMLHttpRequest`, `innerHTML` under `src/`; Prettier. *Done when:* `npm run lint && npm run typecheck` pass on empty `src/`.
+- [x] **0.3** `tsconfig.json` (strict), ESLint flat config incl. rules banning `eval`, `fetch`, `XMLHttpRequest`, `innerHTML` under `src/`; Prettier. (2026-11-03: strict tsconfig, ESLint security bans verified, Prettier configured) *Done when:* `npm run lint && npm run typecheck` pass on empty `src/`.
 - [ ] **0.4** `scripts/build.mjs`: esbuild bundles entry points, merges `manifests/base.json` + overlay per browser, copies `public/`. *Done when:* `npm run build:chrome` and `build:firefox` produce `dist/<browser>/manifest.json`.
 - [ ] **0.5** Minimal manifest + empty background/popup/options that load without errors. *Done when:* loads unpacked in Chrome and as temporary add-on in Firefox with zero console errors.
 - [ ] **0.6** `src/shared/browser.ts` (polyfill wrapper), `types.ts` from 05_Schema §4, `constants.ts`. *Done when:* typecheck passes; unit test imports work.
@@ -82,3 +82,4 @@ Legend: `[ ]` todo · `[x]` done · `[!]` blocked
 | — | — | — | Plan created |
 | 2026-11-03 | 0.1 | Pass | Initialized git, .nvmrc, .npmrc, .gitignore, moved docs to docs/ |
 | 2026-11-03 | 0.2 | Pass | Configured package.json with locked dependencies, pinned tsurlfilter 6.0.4, npm ci verified |
+| 2026-11-03 | 0.3 | Pass | Strict tsconfig, ESLint flat config with security bans (eval/fetch/xhr/innerHTML), prettier; lint and typecheck pass |
