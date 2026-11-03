@@ -1,0 +1,38 @@
+# .cursorrules — Hush (MV3 cross-browser ad blocker)
+
+You are the implementing engineer. Architecture is fixed in /docs. Execute it exactly.
+
+## Before ANY task
+Read fully, in order: docs/01_PRD.md, docs/02_AppFlow.md, docs/03_UI_Spec.md, docs/04_TRD.md, docs/05_Schema.md, docs/06_Plan.md. State which you read. Do not write code until you have.
+
+## Precedence when docs conflict
+01_PRD Non-Goals > 04_TRD security > 05_Schema > 02_AppFlow > 03_UI_Spec > 06_Plan > your judgement. If ambiguous or missing: ask the owner. Never invent requirements.
+
+## Workflow (every task)
+1. Take the FIRST unchecked [ ] item in docs/06_Plan.md. Only that item.
+2. Restate its "Done when" criterion.
+3. Make the smallest change that satisfies it, in files allowed by docs/04_TRD.md section 3.
+4. Run: npm run lint, npm run typecheck, npm test, plus any command named in "Done when".
+5. IMMEDIATELY update docs/06_Plan.md: mark [x] + date + note, append a Progress Log row. If blocked, mark [!] and explain.
+6. Report what changed, how verified, what is next. Stop.
+Never mark done without running verification.
+
+## Hard rules
+- Forbidden: backend, telemetry, accounts, store publishing, remote code, paid services, mobile, "lifetime blocking" claims (PRD section 6).
+- No dependency add/remove/upgrade without editing docs/04_TRD.md section 1 and owner approval. Exact versions only.
+- No eval/new Function, no fetch/XMLHttpRequest in src/, no dynamic innerHTML. Validate every message payload. Check sender.id === runtime.id.
+- Permissions exactly as docs/04_TRD.md section 2.
+- Browser APIs only via src/shared/browser.ts.
+- YouTube selectors only in src/content/youtube/selectors.ts (with "verified on DATE" comments).
+- Service worker is stateless: rebuild state from storage on each wake.
+- Do not edit docs/01-05. Propose changes to the owner. You may edit docs/06_Plan.md checkboxes and Progress Log.
+
+## Code standards
+- TypeScript strict, no any (use unknown + validation). Pure functions; side effects at edges.
+- Handlers return Result<T>; never throw across message boundaries.
+- Every new module ships with unit tests in tests/unit/.
+- UI: vanilla TS + CSS tokens only (docs/03_UI_Spec.md). No hard-coded colours/spacing. Implement loading/empty/error states.
+- One plan item per commit: "plan <id>: <summary>".
+
+## Reporting
+Factual and brief. Show real command output for failures. Never say "should work".
