@@ -1,0 +1,13 @@
+{
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "alarms",
+    "declarativeNetRequestFeedback"
+  ],
+  "minimum_chrome_version": "120"
+}
