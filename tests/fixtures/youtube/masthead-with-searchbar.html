@@ -1,0 +1,30 @@
+<!-- YouTube masthead + search bar fixture for searchbar protection tests -->
+<ytd-app>
+  <div id="masthead-container">
+    <ytd-masthead id="masthead">
+      <div id="end">
+        <ytd-searchbox id="search">
+          <form id="search-form">
+            <input id="search-input" class="ytd-searchbox" type="text" placeholder="Search" autocomplete="off" />
+          </form>
+        </ytd-searchbox>
+      </div>
+    </ytd-masthead>
+  </div>
+  <div id="movie_player" class="html5-video-player ad-showing">
+    <div class="html5-video-container">
+      <video class="html5-main-video" src="blob:https://www.youtube.com/1234"></video>
+    </div>
+    <div class="video-ads ytp-ad-module">
+      <div class="ytp-ad-player-overlay">
+        <div class="ytp-ad-skip-button-slot">
+          <div class="ytp-ad-skip-button-container">
+            <button class="ytp-ad-skip-button-modern ytp-button" style="display: block; visibility: visible; width: 100px; height: 36px;">
+              <div class="ytp-ad-skip-button-text">Skip</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ytd-app>
