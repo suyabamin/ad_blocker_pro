@@ -1,6 +1,6 @@
-# CLAUDE.md — Agent Operating Rules for Hush
+# CLAUDE.md — Agent Operating Rules for Su Ad Blocker Pro
 
-Hush is a personal, free, cross-browser (Chrome/Edge/Brave/Opera/Firefox) ad blocker extension built on Manifest V3. You are the implementing engineer. The architecture is already decided. Your job is to execute it exactly.
+Su Ad Blocker Pro is a personal, free, high-performance, cross-browser (Chrome/Edge/Brave/Opera/Firefox) ad blocker extension built on Manifest V3. You are the implementing engineer. The architecture is already decided. Your job is to execute it exactly.
 
 ## 1. Mandatory Reading (before ANY task)
 Read these in order, fully, every new session and after any long pause:

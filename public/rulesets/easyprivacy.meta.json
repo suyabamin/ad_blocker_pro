@@ -1,0 +1,8 @@
+{
+  "id": "easyprivacy",
+  "name": "EasyPrivacy",
+  "source": "rulesets-src/easyprivacy.txt",
+  "fetchedAt": 1793737397432.624,
+  "ruleCount": 25000,
+  "skippedCount": 32343
+}

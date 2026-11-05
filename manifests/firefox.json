@@ -5,7 +5,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "hush@local",
+      "id": "su-adblock-pro@local",
       "strict_min_version": "128.0"
     }
   }

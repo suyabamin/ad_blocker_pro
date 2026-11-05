@@ -28,6 +28,7 @@ Hush has **no server, no accounts, and no cloud database**. Therefore:
 | `theme` | enum `system\|light\|dark` | NOT NULL | `system` |
 | `showBadge` | boolean | NOT NULL | `true` |
 | `debug` | boolean | NOT NULL | `false` |
+| `youtubePrunePlayerData` | boolean | NOT NULL | `true` |
 | `youtubeAutoSkip` | boolean | NOT NULL | `true` |
 | `youtubeSpeedUnskippable` | boolean | NOT NULL | `true` |
 | `youtubeHideBanners` | boolean | NOT NULL | `true` |

@@ -171,6 +171,24 @@ describe('Searchbar Protection (fix: docs/SEARCHBAR_BUG_REPORT.md)', () => {
     }
   });
 
+  it('does not treat the masthead Skip navigation control as an ad skip button', () => {
+    const fixtureHtml = fs.readFileSync(
+      path.resolve('tests/fixtures/youtube/masthead-with-searchbar.html'),
+      'utf-8'
+    );
+    document.body.innerHTML = fixtureHtml;
+
+    const player = document.getElementById('movie_player');
+    const navigationButton = document.querySelector<HTMLButtonElement>(
+      'button[aria-label="Skip navigation"]'
+    );
+
+    expect(player).not.toBeNull();
+    expect(navigationButton).not.toBeNull();
+    expect(findSkipButton(player)).not.toBe(navigationButton);
+    expect(findSkipButton(player)?.closest('#movie_player')).toBe(player);
+  });
+
   it('pruneAdData preserves search result structure while pruning ad keys', () => {
     // Simulate a /youtubei/v1/search response with typical search result structure
     const searchResponse = {

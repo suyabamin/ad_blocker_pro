@@ -1,0 +1,8 @@
+{
+  "id": "ublock-filters",
+  "name": "uBlock Filters",
+  "source": "rulesets-src/ublock-filters.txt",
+  "fetchedAt": 1793737397488.184,
+  "ruleCount": 827,
+  "skippedCount": 5249
+}

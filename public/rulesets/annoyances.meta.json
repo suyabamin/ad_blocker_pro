@@ -1,0 +1,8 @@
+{
+  "id": "annoyances",
+  "name": "uBlock Annoyances",
+  "source": "rulesets-src/annoyances.txt",
+  "fetchedAt": 1793737397542.229,
+  "ruleCount": 207,
+  "skippedCount": 5854
+}

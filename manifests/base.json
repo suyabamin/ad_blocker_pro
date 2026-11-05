@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Hush",
+  "name": "Su Ad Blocker Pro",
+  "short_name": "Su AdBlock Pro",
   "version": "0.1.0",
-  "description": "Personal, fast, cross-browser ad blocker on Manifest V3.",
+  "description": "Browse Faster. Stay Ad-Free. Fast, lightweight cross-browser ad blocker with high-performance YouTube ad neutralization.",
   "permissions": [
     "declarativeNetRequest",
     "storage",
@@ -13,6 +14,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
+    "default_title": "Su AdBlock Pro",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",
@@ -30,6 +32,30 @@
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
   },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "easylist",
+        "enabled": true,
+        "path": "rulesets/easylist.json"
+      },
+      {
+        "id": "easyprivacy",
+        "enabled": true,
+        "path": "rulesets/easyprivacy.json"
+      },
+      {
+        "id": "ublock-filters",
+        "enabled": true,
+        "path": "rulesets/ublock-filters.json"
+      },
+      {
+        "id": "annoyances",
+        "enabled": false,
+        "path": "rulesets/annoyances.json"
+      }
+    ]
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -38,10 +64,24 @@
       "all_frames": true
     },
     {
-      "matches": ["*://*.youtube.com/*", "*://*.youtube-nocookie.com/*"],
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.youtube-nocookie.com/*",
+        "*://youtube.com/*"
+      ],
       "js": ["content/youtube.js"],
       "run_at": "document_start",
       "all_frames": true
+    },
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.youtube-nocookie.com/*",
+        "*://youtube.com/*"
+      ],
+      "js": ["content/youtube-main.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
     }
   ]
 }

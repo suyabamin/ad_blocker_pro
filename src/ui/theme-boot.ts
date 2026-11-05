@@ -1,13 +1,16 @@
-// theme-boot.ts: synchronous theme initialization
+// src/ui/theme-boot.ts
+// Synchronously sets data-theme on <html> before first paint (03_UI_Spec §2)
+
 try {
-  const theme = localStorage.getItem('hush_theme') || 'system';
-  const effectiveTheme =
-    theme === 'system'
-      ? window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light'
-      : theme;
-  document.documentElement.setAttribute('data-theme', effectiveTheme);
+  const prefersDark =
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  document.documentElement.setAttribute(
+    'data-theme',
+    prefersDark ? 'dark' : 'light'
+  );
 } catch {
   document.documentElement.setAttribute('data-theme', 'light');
 }

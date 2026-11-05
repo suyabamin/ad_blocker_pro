@@ -148,7 +148,7 @@ Not in MVP: rewriting player response JSON, network interception of `googlevideo
 5. Custom rules parsed by our own strict parser; unsupported syntax rejected, never passed through.
 6. No analytics, no cookies, no `localStorage` use for settings (use `storage.local`).
 7. Dependencies: production deps limited to `webextension-polyfill` (+ build-time-only others in devDependencies). Run `npm audit --omit=dev` before each release.
-8. Content scripts run isolated world; do not use `world: "MAIN"`.
+8. Content scripts: Run in isolated world by default. **Exception formally authorized by owner on 2026-11-05:** `src/content/youtube/mainWorld.ts` is registered with `world: "MAIN"`, `run_at: "document_start"` strictly on `*://*.youtube.com/*` and `*://*.youtube-nocookie.com/*` for Layer 1 player-data pruning (pruning `adPlacements`, `playerAds`, `adSlots` from `ytInitialPlayerResponse` and JSON responses). It has zero access to extension APIs, makes zero network requests, never throws, and contains a settings kill switch (`settings.youtubePrunePlayerData`). All other scripts run in isolated world.
 9. Import settings: schema-validate and size-limit (≤ 1 MB) before applying.
 
 ## 10. Performance Budget

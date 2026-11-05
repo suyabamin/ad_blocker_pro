@@ -1,5 +1,105 @@
-/* Hush tokens placeholder */
+/* src/ui/tokens.css */
+/* Su Ad Blocker Pro Design Tokens (Premium Orange Theme) */
+
 :root {
-  --color-bg: #F7F8FA;
+  /* Colors - Light Theme Default */
+  --color-bg: #FAFAFA;
   --color-surface: #FFFFFF;
+  --color-surface-2: #F4F4F5;
+  --color-border: #E4E4E7;
+  --color-text: #18181B;
+  --color-text-muted: #71717A;
+  
+  /* Brand Theme: Professional Orange */
+  --color-primary: #EA580C;
+  --color-primary-hover: #C2410C;
+  --color-primary-contrast: #FFFFFF;
+  
+  --color-success: #15803D;
+  --color-warning: #B45309;
+  --color-danger: #DC2626;
+  --color-focus-ring: #EA580C;
+  --color-overlay: rgba(24, 24, 27, 0.55);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-display-size: 40px;
+  --text-display-lh: 44px;
+  --text-display-weight: 700;
+
+  --text-h1-size: 24px;
+  --text-h1-lh: 32px;
+  --text-h1-weight: 600;
+
+  --text-h2-size: 18px;
+  --text-h2-lh: 24px;
+  --text-h2-weight: 600;
+
+  --text-body-size: 14px;
+  --text-body-lh: 20px;
+  --text-body-weight: 400;
+
+  --text-small-size: 12px;
+  --text-small-lh: 16px;
+  --text-small-weight: 400;
+
+  --text-mono-size: 13px;
+  --text-mono-lh: 20px;
+  --text-mono-weight: 400;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(24, 24, 27, 0.06);
+  --shadow-2: 0 8px 24px rgba(24, 24, 27, 0.12);
+
+  /* Motion */
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Dark Theme */
+html[data-theme="dark"] {
+  --color-bg: #09090B;
+  --color-surface: #18181B;
+  --color-surface-2: #27272A;
+  --color-border: #3F3F46;
+  --color-text: #F4F4F5;
+  --color-text-muted: #A1A1AA;
+  
+  --color-primary: #FB923C;
+  --color-primary-hover: #F97316;
+  --color-primary-contrast: #18181B;
+  
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+  --color-focus-ring: #FB923C;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+
+  --shadow-1: 0 0 0 1px var(--color-border);
+  --shadow-2: 0 0 0 1px var(--color-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root, html[data-theme="dark"] {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+  }
 }
