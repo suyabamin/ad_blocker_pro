@@ -1,9 +1,10 @@
 {
-  "name": "hush",
-  "version": "0.1.0",
+  "name": "su-adblock-pro",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
+    "icons": "node scripts/generate-icons.mjs",
     "dev:chrome": "node scripts/build.mjs --watch --browser=chrome",
     "dev:firefox": "node scripts/build.mjs --watch --browser=firefox",
     "build:chrome": "node scripts/build.mjs --browser=chrome",
