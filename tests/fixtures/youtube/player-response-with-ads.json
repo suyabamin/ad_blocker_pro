@@ -1,0 +1,58 @@
+{
+  "responseContext": {
+    "visitorData": "CgtWRTJ4..."
+  },
+  "playabilityStatus": {
+    "status": "OK"
+  },
+  "streamingData": {
+    "expiresInSeconds": "21599",
+    "formats": [
+      {
+        "itag": 18,
+        "mimeType": "video/mp4; codecs=\"avc1.42001E, mp4a.40.2\"",
+        "bitrate": 622485,
+        "width": 640,
+        "height": 360,
+        "url": "https://rr3---sn-4g5edn6r.googlevideo.com/videoplayback?itag=18"
+      }
+    ],
+    "adaptiveFormats": []
+  },
+  "videoDetails": {
+    "videoId": "dQw4w9WgXcQ",
+    "title": "Rick Astley - Never Gonna Give You Up (Official Music Video)",
+    "lengthSeconds": "213",
+    "channelId": "UCuAXFkgsw1L7xaCfnd5JJOw",
+    "isLiveContent": false
+  },
+  "playerAds": [
+    {
+      "playerAdParams": {
+        "showContentThumbnail": true
+      }
+    }
+  ],
+  "adPlacements": [
+    {
+      "adPlacementRenderer": {
+        "config": {
+          "adTimeOffset": {
+            "offset": "0"
+          }
+        }
+      }
+    }
+  ],
+  "adSlots": [
+    {
+      "slotId": "ad-slot-1",
+      "slotType": "SLOT_TYPE_IN_STREAM"
+    }
+  ],
+  "captions": {
+    "playerCaptionsTracklistRenderer": {
+      "captionTracks": []
+    }
+  }
+}
