@@ -47,7 +47,7 @@ function copyRecursive(src, dest) {
 }
 
 async function build() {
-  console.log(`[Hush Build] Building for ${browser}...`);
+  console.log(`[Su AdBlock Pro Build] Building for ${browser}...`);
 
   // 1. Generate merged manifest
   const manifest = mergeManifests(
@@ -60,7 +60,7 @@ async function build() {
     'utf-8'
   );
 
-  // 2. Copy public directory
+  // 2. Copy public directory (including generated icons and rulesets)
   copyRecursive(path.resolve('public'), outDir);
 
   // 3. Copy CSS files to ui/
@@ -87,6 +87,7 @@ async function build() {
   const iifeEntrypoints = {
     'content/cosmetic': 'src/content/cosmetic.ts',
     'content/youtube': 'src/content/youtube/index.ts',
+    'content/youtube-main': 'src/content/youtube/mainWorld.ts',
     'ui/theme-boot': 'src/ui/theme-boot.ts',
   };
 
@@ -111,7 +112,7 @@ async function build() {
     });
     await ctxEsm.watch();
     await ctxIife.watch();
-    console.log(`[Hush Build] Watching for changes (${browser})...`);
+    console.log(`[Su AdBlock Pro Build] Watching for changes (${browser})...`);
   } else {
     await esbuild.build({
       ...commonOptions,
@@ -123,11 +124,11 @@ async function build() {
       entryPoints: iifeEntrypoints,
       format: 'iife',
     });
-    console.log(`[Hush Build] Completed build for ${browser} -> ${outDir}`);
+    console.log(`[Su AdBlock Pro Build] Completed build for ${browser} -> ${outDir}`);
   }
 }
 
 build().catch((err) => {
-  console.error('[Hush Build] Error:', err);
+  console.error('[Su AdBlock Pro Build] Error:', err);
   process.exit(1);
 });
