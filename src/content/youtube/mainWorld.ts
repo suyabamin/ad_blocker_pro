@@ -42,9 +42,25 @@ import { pruneAdData } from './adKeys.js';
 
     // 2. Hook JSON.parse to prune dynamic player/next endpoint responses
     const origJsonParse = JSON.parse;
+    const isPlayerPayload = (value: unknown): boolean => {
+      if (!value || typeof value !== 'object' || Array.isArray(value)) {
+        return false;
+      }
+
+      // JSON.parse is used throughout YouTube, including for search suggestions
+      // and UI state. Only touch objects with fields unique to player responses.
+      const record = value as Record<string, unknown>;
+      return (
+        'playerResponse' in record ||
+        'videoDetails' in record ||
+        'streamingData' in record ||
+        'playabilityStatus' in record
+      );
+    };
+
     JSON.parse = function (text: string, reviver?: (this: unknown, key: string, value: unknown) => unknown) {
       const parsed = origJsonParse.call(this, text, reviver);
-      if (isLayer1Disabled() || !parsed || typeof parsed !== 'object') {
+      if (isLayer1Disabled() || !isPlayerPayload(parsed)) {
         return parsed;
       }
       return pruneAdData(parsed);
