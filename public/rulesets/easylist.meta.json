@@ -1,0 +1,8 @@
+{
+  "id": "easylist",
+  "name": "EasyList",
+  "source": "rulesets-src/easylist.txt",
+  "fetchedAt": 1793737397377.1306,
+  "ruleCount": 25000,
+  "skippedCount": 66852
+}
