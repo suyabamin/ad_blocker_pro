@@ -53,7 +53,7 @@ The agent MUST NOT build any of the following without the owner editing this sec
 - Whitelisting/"acceptable ads" programs or monetisation of any kind.
 - A promise or UI claim of "permanent / lifetime" YouTube blocking.
 - Redistribution of the extension to other people (YouTube ToS and legal exposure; personal use only).
-- Rewriting YouTube's player-response JSON (fragile, high-maintenance). Revisit only as a post-MVP experiment.
+- Rewriting YouTube's player-response JSON: **Overridden on 2026-11-05 by owner authorization.** Player-data pruning in the page's MAIN world is now approved and implemented as Layer 1 defense with a settings toggle kill switch (`youtubePrunePlayerData`). All other Non-Goals remain strictly in force.
 
 ## 7. Known Risks
 | Risk | Mitigation |
